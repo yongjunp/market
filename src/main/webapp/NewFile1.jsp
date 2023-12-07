@@ -56,7 +56,7 @@
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder">핏하네</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">인기 의류 할인중</p>
+                    <p class="lead fw-normal text-white-50 mb-0">15000원 이상 구매시 가위바위보 횟수 1회증정</p>
                     
                      	
                     
@@ -80,19 +80,19 @@
   
   
 <li class="nav-item">
-    <a class="nav-link " href="./main2.jsp" style="color: #000;">상의</a>
+    <a class="nav-link " href="${pageContext.request.contextPath }/upper" style="color: #000;">상의</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./pants.jsp" style="color: #000;">하의</a>
+    <a class="nav-link" href="${pageContext.request.contextPath }/under" style="color: #000;">하의</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./outer.jsp" style="color: #000;">아우터</a>
+    <a class="nav-link" href="${pageContext.request.contextPath }/outer" style="color: #000;">아우터</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./shoes.jsp" style="color: #000;">신발</a>
+    <a class="nav-link" href="${pageContext.request.contextPath }/shoes" style="color: #000;">신발</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./cap.jsp" style="color: #000;">모자</a>
+    <a class="nav-link" href="${pageContext.request.contextPath }/cap" style="color: #000;">모자</a>
   </li>
 </ul>
         

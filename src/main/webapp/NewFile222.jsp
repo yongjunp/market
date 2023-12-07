@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,42 +35,52 @@
         <!-- Product section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
-                <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
-                    <div class="col-md-6">
-                        <div class="small mb-1">»óÀÇ</div>
-                        <h1 class="display-5 fw-bolder">¹«½¼¹«½¼¿Ê</h1>
-                        <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through">ÇÒÀÎÀü °¡°Ý</span>
-                            <span>ÇÒÀÎ ÈÄ °¡°Ý</span>
-                        </div>
-                        <p class="lead">  ¼³¸í Ã¢   </p>
-                        <div class="d-flex">
-                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                            
-                            
-                            
-                            
-                            <a class="btn btn-outline-dark flex-shrink-0" type="button" href="${pageContext.request.contextPath }/orderForm">
-                                <i class="bi-cart-fill me-1"></i>
-                                ±¸¸ÅÇÏ±â
-                            </a>
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                                <i class="bi-cart-fill me-1"></i>
-                                Àå¹Ù±¸´Ï
-                            </button>
-                        </div>
-                    </div>
-                </div>
+	                <div class="row gx-4 gx-lg-5 align-items-center">
+	                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="${clothes.clphoto}" alt="..." /></div>
+	                    <div class="col-md-6">
+	                        <div class="small mb-1">${clothes.ctype }</div>
+	                        <h1 class="display-5 fw-bolder">${clothes.cname }</h1>
+	                        <div class="fs-5 mb-5">
+	                            <span class="text-decoration-line-through">${clothes.cprice }</span>
+	                        </div>
+	                        <p class="lead">  ${clothes.clinfo }   </p>
+	                        <div class="d-flex">
+	                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+	                            <c:if test="${sessionScope.LoginMemId != null }">
+	                            <a class="btn btn-outline-dark flex-shrink-0" type="button" href="${pageContext.request.contextPath }/orderForm?clcode=${param.Clcode}&clname=${clothes.cname}&cprice=${clothes.cprice }&photo=${clothes.clphoto}&csize=${clothes.csize}">
+	                                <i class="bi-cart-fill me-1"></i>
+	                                êµ¬ë§¤í•˜ê¸°
+	                            </a>
+	                            </c:if>
+	                            <c:if test="${sessionScope.LoginMemId == null }">
+	                            <a class="btn btn-outline-dark flex-shrink-0" type="button" href="${pageContext.request.contextPath}/Login">
+	                                <i class="bi-cart-fill me-1"></i>
+	                                êµ¬ë§¤í•˜ê¸°
+	                            </a>
+	                            </c:if>
+	                            <a href="javascript:add()" class="btn btn-outline-dark flex-shrink-0" type="button">
+	                                <i class="bi-cart-fill me-1"></i>
+	                                ìž¥ë°”êµ¬ë‹ˆ
+	                            </a>
+	                        </div>
+	                    </div>
+	                </div>
             </div>
 </section>
 
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    console.log('${clothes}')
+    function add(){
+    	$.ajax({
+    		url:"${pageContext.request.contextPath}/addCart",
+    		type:"post",
+    		data:{"mid":"${sessionScope.LoginMemId}", "clcode":"${clothes.clcode}", "price":"${clothes.cprice}", "size":"${clothes.csize}", "amount":"${clothes.camount}"},
+    		success:function(rs){
+    			alert(rs);
+    		}
+    	})
+    }
+    </script>
 </html>

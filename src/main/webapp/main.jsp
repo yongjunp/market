@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +38,7 @@
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container px-4 px-lg-5">
-			<!--           <a class="navbar-brand" href="#!">гмгоЁв</a>
+			<!--           <a class="navbar-brand" href="#!">М∙▐М∙≤К└╓</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -62,7 +62,7 @@
                         </button>
                     </form>-->
 		</div>
-		</div>
+
 	</nav>
 	<!-- Header-->
 	<header class="">
@@ -74,59 +74,33 @@
 	</header>
 
 
-		<ul class="nav nav-tabs">
+
+
+		<ul class="nav nav-tabs">			
 
 
 			<li class="nav-item"><a class="nav-link "
 				href="${pageContext.request.contextPath }/upper"
-				style="color: #000;">╩Сюг</a></li>
+				style="color: #000;">Л┐│Л²≤</a></li>
 			<li class="nav-item"><a class="nav-link"
 				href="${pageContext.request.contextPath }/under"
-				style="color: #000;">гоюг</a></li>
+				style="color: #000;">М∙≤Л²≤</a></li>
 			<li class="nav-item"><a class="nav-link"
 				href="${pageContext.request.contextPath }/outer"
-				style="color: #000;">╬ф©Лем</a></li>
+				style="color: #000;">Л∙└Л ╟М└╟</a></li>
 			<li class="nav-item"><a class="nav-link"
 				href="${pageContext.request.contextPath }/shoes"
-				style="color: #000;">╫е╧ъ</a></li>
+				style="color: #000;">Л▀═К╟°</a></li>
 			<li class="nav-item"><a class="nav-link"
-				href="${pageContext.request.contextPath }/cap" style="color: #000;">╦Пюз</a>
+				href="${pageContext.request.contextPath }/cap" style="color: #000;">К╙╗Л·░</a>
 			</li>
 		</ul>
 
 		<!-- Section-->
 		<section class="py-5">
 			<div class="container px-4 px-lg-5 mt-5">
-				<div
-					class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-					<c:forEach items="${clothes }" var="cl">
-						<div class="col mb-5">
-							<div class="card h-100">
-								<!-- Product image-->
-								<img class="card-img-top" src="${cl.clphoto }" alt="..."
-									style="height: 300px; ">
-								<!-- Product details-->
-								<div class="card-body p-4">
-									<div class="text-center">
-										<!-- Product name-->
-										<h5 class="fw-bolder">${cl.cname }</h5>
-										${cl.cprice }
-
-										<!-- Product price-->
-									</div>
-								</div>
-								<!-- Product actions-->
-								<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-									<div class="text-center">
-										<a class="btn btn-outline-dark mt-auto"
-											href="${pageContext.request.contextPath }/detailPage?Clcode=${cl.clcode }">╩С╪╪
-											фДюлаЖ</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</c:forEach>
-
+				<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">	
+						
 				</div>
 			</div>
 
@@ -135,7 +109,7 @@
 				<ul class="pagination justify-content-center">
 					<li class="page-item disabled"></li>
 				</ul>
-			</nav>
+			</nav>		
 
 
 
@@ -147,7 +121,7 @@
 		<!-- Footer-->
 		<footer class="py-5 bg-dark">
 			<div class="container">
-				<p class="m-0 text-center text-white">fit &copy; гмгоЁв</p>
+				<p class="m-0 text-center text-white">fit &copy; М∙▐М∙≤К└╓</p>
 			</div>
 		</footer>
 		<!-- Bootstrap core JS-->

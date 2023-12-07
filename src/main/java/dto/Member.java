@@ -8,6 +8,20 @@ public class Member {
 	private String phone;
 	private String address;
 	private String mstate;
+	private String mcount;
+	private String mpoint;
+	public String getMpoint() {
+		return mpoint;
+	}
+	public void setMpoint(String mpoint) {
+		this.mpoint = mpoint;
+	}
+	public String getMcount() {
+		return mcount;
+	}
+	public void setMcount(String mcount) {
+		this.mcount = mcount;
+	}
 	public String getMid() {
 		return mid;
 	}
@@ -53,6 +67,6 @@ public class Member {
 	@Override
 	public String toString() {
 		return "Member [mid=" + mid + ", mpw=" + mpw + ", mname=" + mname + ", memail=" + memail + ", phone=" + phone
-				+ ", address=" + address + ", mstate=" + mstate + "]";
+				+ ", address=" + address + ", mstate=" + mstate + ", mcount=" + mcount + ", mpoint=" + mpoint + "]";
 	}
 }

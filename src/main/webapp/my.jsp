@@ -1,10 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="EUC-KR" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>¸¶ÀÌÆäÀÌÁö</title>
+    <title>ë§ˆì´í˜ì´ì§€</title>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -45,19 +46,46 @@
         input[type="submit"]:hover {
             background-color: #0056b3;
         }
+        table{
+        padding:5px;
+        }
+        td{
+        padding:5px;
+        text-align:center;
+        }
     </style>
 </head>
 <body>
-    <h1>¸¶ÀÌÆäÀÌÁö</h1>
-    <%-- ¿©±â¿¡¼­ »ç¿ëÀÚ Á¤º¸¸¦ ¼³Á¤ÇØÁÖ¼¼¿ä --%>
+    <h1>ë§ˆì´í˜ì´ì§€</h1>
+    <%-- ì—¬ê¸°ì—ì„œ ì‚¬ìš©ì ì •ë³´ë¥¼ ì„¤ì •í•´ì£¼ì„¸ìš” --%>
     <div class="info-box">
-        <label for="userName">ÀÌ¸§:</label>
-        <p id="userName">${sessionScope.LoginMemId}</p>
-        <label for="userEmail">ÀÌ¸ŞÀÏ:</label>
+        <label for="userName">ì´ë¦„:</label>
+        <p id="userName">${sessionScope.LoginMemName}</p>
+        <label for="userEmail">ì´ë©”ì¼:</label>
         <p id="userEmail">${sessionScope.LoginMemEmail }</p>
-        <label for="orderDetails">ÁÖ¹® ³»¿ª:</label>
-        <p id="orderDetails"></p>
-        <input type="submit" value="ÁÖ¹® »ó¼¼Á¤º¸">
+        <p>ì‚¬ìš©ê°€ëŠ¥ í¬ì¸íŠ¸:${sessionScope.LoginMemPoint } (ì¬ë¡œê·¸ì¸ì‹œ ê°±ì‹ ë©ë‹ˆë‹¤)</p>
+        <label for="orderDetails">ì£¼ë¬¸ ë‚´ì—­:</label>
+        <table>
+        	<tr>
+        	<td>ì£¼ë¬¸ì½”ë“œ</td>
+        	<td>ìƒí’ˆì½”ë“œ</td>
+        	<td>ì£¼ë¬¸ì•„ì´ë””</td>
+        	<td>ì£¼ë¬¸ì‹œê°„</td>
+        	<td>ì£¼ë¬¸ìˆ˜ëŸ‰</td>
+        	<td>ì£¼ë¬¸ê°€ê²©</td>
+			</tr>
+			<c:forEach items="${orderList }" var="od">
+			<tr>
+        	<td>${od.odcode }</td>
+        	<td>${od.clcode }</td>
+        	<td>${od.mid }</td>
+        	<td>${od.oddate }</td>
+        	<td>${od.amount }</td>
+        	<td>${od.price }</td>
+			</tr>
+			</c:forEach>
+        </table>
+        
     </div>
 </body>
 </html>

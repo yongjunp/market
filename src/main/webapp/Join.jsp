@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>È¸¿ø°¡ÀÔ</title>
+    <title>íšŒì›ê°€ìž…</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,28 +43,28 @@
 
 
   <div class="login-container">
-    <h2>È¸¿ø°¡ÀÔ</h2>
+    <h2>íšŒì›ê°€ìž…</h2>
     <form action="${pageContext.request.contextPath }/memJoin" method="post">
-        <label for="name">ÀÌ¸§:</label>
+        <label for="name">ì´ë¦„:</label>
         <input type="text" id="name" name="name" required>
 
-        <label for="username">¾ÆÀÌµð:</label>
+        <label for="username">ì•„ì´ë””:</label>
         <input type="text" id="username" name="id" required>
 
-        <label for="password">ºñ¹Ð¹øÈ£:</label>
+        <label for="password">ë¹„ë°€ë²ˆí˜¸:</label>
         <input type="password" id="password" name="pw" required>
 
         <label for="confirmPassword">E-mail:</label>
         <input type="text" id="confirmPassword" name="email" required>
 
-        <label for="phone">ÀüÈ­¹øÈ£:</label>
+        <label for="phone">ì „í™”ë²ˆí˜¸:</label>
         <input type="tel" id="phone" name="phone" required>
 
-        <label for="address">ÁÖ¼Ò:</label>
+        <label for="address">ì£¼ì†Œ:</label>
         <input type="text" id="address" name="address" required>
 
-        <button type="submit">°¡ÀÔÇÏ±â</button>
-        <button type="submit">ÀÌÀüÆäÀÌÁö</button>
+        <button type="submit">ê°€ìž…í•˜ê¸°</button>
+        <button type="submit">ì´ì „íŽ˜ì´ì§€</button>
        
     </form>
 

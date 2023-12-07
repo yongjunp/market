@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,15 +10,6 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 <title>Shop Homepage - Start Bootstrap Template</title>
-<style>
-	.mainImg{
-		max-width: none;
-		width:2000px;
-		height: 700px;
-		position: relative;
-    	top: -16px
-	}
-</style>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 <!-- Bootstrap icons-->
@@ -38,7 +29,7 @@
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container px-4 px-lg-5">
-			<!--           <a class="navbar-brand" href="#!">ÇÍÇÏ³×</a>
+			<!--           <a class="navbar-brand" href="#!">í•í•˜ë„¤</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -65,13 +56,24 @@
 		</div>
 	</nav>
 	<!-- Header-->
-	<header class="">
-		<div class="">
-			<div class="">
-				<img src='https://ifh.cc/g/dcXdOL.jpg' class="mainImg">	
+	<header class="bg-dark py-3">
+		<div class="container px-4 px-lg-5 my-5">
+			<div class="text-center text-white">
+				<h1 class="display-4 fw-bolder">í•í•˜ë„¤</h1>
+				<p class="lead fw-normal text-white-50 mb-0">ê²€ìƒ‰ : ${searchVal }</p>
+
+
+
 			</div>
 		</div>
+
+
+
+
+
 	</header>
+
+	<div id="contents">
 
 
 		<ul class="nav nav-tabs">
@@ -79,18 +81,18 @@
 
 			<li class="nav-item"><a class="nav-link "
 				href="${pageContext.request.contextPath }/upper"
-				style="color: #000;">»óÀÇ</a></li>
+				style="color: #000;">ìƒì˜</a></li>
 			<li class="nav-item"><a class="nav-link"
 				href="${pageContext.request.contextPath }/under"
-				style="color: #000;">ÇÏÀÇ</a></li>
+				style="color: #000;">í•˜ì˜</a></li>
 			<li class="nav-item"><a class="nav-link"
 				href="${pageContext.request.contextPath }/outer"
-				style="color: #000;">¾Æ¿ìÅÍ</a></li>
+				style="color: #000;">ì•„ìš°í„°</a></li>
 			<li class="nav-item"><a class="nav-link"
 				href="${pageContext.request.contextPath }/shoes"
-				style="color: #000;">½Å¹ß</a></li>
+				style="color: #000;">ì‹ ë°œ</a></li>
 			<li class="nav-item"><a class="nav-link"
-				href="${pageContext.request.contextPath }/cap" style="color: #000;">¸ğÀÚ</a>
+				href="${pageContext.request.contextPath }/cap" style="color: #000;">ëª¨ì</a>
 			</li>
 		</ul>
 
@@ -104,7 +106,7 @@
 							<div class="card h-100">
 								<!-- Product image-->
 								<img class="card-img-top" src="${cl.clphoto }" alt="..."
-									style="height: 300px; ">
+									style="height: 300px;">
 								<!-- Product details-->
 								<div class="card-body p-4">
 									<div class="text-center">
@@ -119,8 +121,8 @@
 								<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 									<div class="text-center">
 										<a class="btn btn-outline-dark mt-auto"
-											href="${pageContext.request.contextPath }/detailPage?Clcode=${cl.clcode }">»ó¼¼
-											ÆäÀÌÁö</a>
+											href="${pageContext.request.contextPath }/detailPage?Clcode=${cl.clcode }">ìƒì„¸
+											í˜ì´ì§€</a>
 									</div>
 								</div>
 							</div>
@@ -147,7 +149,7 @@
 		<!-- Footer-->
 		<footer class="py-5 bg-dark">
 			<div class="container">
-				<p class="m-0 text-center text-white">fit &copy; ÇÍÇÏ³×</p>
+				<p class="m-0 text-center text-white">fit &copy; í•í•˜ë„¤</p>
 			</div>
 		</footer>
 		<!-- Bootstrap core JS-->

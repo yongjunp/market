@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="UTF-8">
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -89,6 +89,14 @@ input[type='date'] {
 .formInputErr {
 	border: 2px solid red !important;
 }
+#search{
+	display: inline-block;
+}
+.searchBtn{
+	height: 50px;
+    position: relative;
+    top: -3px;
+}
 </style>
 </head>
 
@@ -109,10 +117,12 @@ input[type='date'] {
 
 
 		<div class="container">
-			<form class="d-flex" role="search">
-				<input class="container-fluid form-control-lg me-2" type="search"
+			<form name="newProduct"
+			action="${pageContext.request.contextPath }/searchPage"
+			class="form-horizontal" method="post">
+				<input name="search" id="search" class="container-fluid form-control-lg me-2" type="text"
 					placeholder="검색" aria-label="검색" style="width: 1000px;">
-				<button class="btn btn-outline-success " type="submit">검색</button>
+				<button class="btn btn-outline-success searchBtn " id="search" type="submit">검색</button>
 			</form>
 		</div>
 	</div>
@@ -122,11 +132,13 @@ input[type='date'] {
 		<a class="btn btn-outline-light mt-auto" href="./my.jsp">마이페이지</a>
 	</div>
 	<div class="text-center">
-		<a class="btn btn-outline-light mt-auto" href="./cart.jsp">장바구니</a>
+		<a class="btn btn-outline-light mt-auto" href="${pageContext.request.contextPath }/cart">장바구니</a>
 	</div>
+	<c:if test="${sessionScope.LoginMstate == 2 }">
 	<div class="text-center">
 		<a class="btn btn-outline-light mt-auto" href="/Addproduct.jsp">옷등록</a>
 	</div>
+	</c:if>
 
 	<c:choose>
 		<c:when test="${ sessionScope.LoginMemId == null }">
@@ -147,6 +159,10 @@ input[type='date'] {
 			<div class="text-center">
 				<a class="btn btn-outline-light mt-auto"
 					href="${pageContext.request.contextPath}/my">내정보</a>
+			</div>
+			<div class="text-center">
+				<a class="btn btn-outline-light mt-auto"
+					href="${pageContext.request.contextPath}/rsp">가위바위보</a>
 			</div>
 		</c:otherwise>
 	</c:choose>

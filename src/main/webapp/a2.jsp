@@ -1,10 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>¿¹¾à ÆäÀÌÁö</title>
+    <title>ì˜ˆì•½ í˜ì´ì§€</title>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -28,7 +29,7 @@
             border-radius: 5px;
             padding: 100px;
             margin-bottom: 15px;
-            display: inline-block; /* ¿ä¼Ò¸¦ ÀÎ¶óÀÎ ºí·ÏÀ¸·Î ¼³Á¤ÇÏ¿© ³×¸ğ »óÀÚ ¾È¿¡ ¹èÄ¡ */
+            display: inline-block; /* ìš”ì†Œë¥¼ ì¸ë¼ì¸ ë¸”ë¡ìœ¼ë¡œ ì„¤ì •í•˜ì—¬ ë„¤ëª¨ ìƒì ì•ˆì— ë°°ì¹˜ */
         }
     </style>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -44,28 +45,40 @@
 
 
 
-    <h1>±¸¸Å</h1>
+    <h1>êµ¬ë§¤</h1>
     <div class="info-box">
         <h2></h2>
         
-        <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
+        <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="${param.photo }" alt="..." /></div>
         
         
         <div class="info-item">
-        <form action="${pageContext.request.contextPath }/order">
-            <p>»óÇ°: asd</p><input type="hidden" value="CL00001" name="goodsCode">
-            <p>ÀÌ¸§: ${sessionScope.LoginMemName }</p><input type="hidden"name = "MemId" value="${sessionScope.LoginMemId }">
-            <p>ÁÖ¹® ³»¿ª: OD00001</p><input type="hidden"name = "goodsCode" value="OD00001">
-            <p>±İ¾×: 1000</p><input type="hidden" id="goodsPrice"name = "goodsPrice" value="1000">
-            <p style="display: contents;">»çÀÌÁî:</p><select name="goodsSize"><option value="m">m</option><option value="l">l</option><option value="xl">xl</option></select><br>
-            <p style="display: contents;">¼ö·®(ÃÖ´ë10):</p><select name="goodsAmount"><c:forEach var="i" begin="1" end="10"><option value="${i }">${i }</option></c:forEach></select><br>
-            <p style="display: contents;">ÁÖ¼Ò: </p><input type="text"name="address"><br>
-             <button type="submit"> °áÁ¦ÇÏ±â </button>
+        <form action="${pageContext.request.contextPath }/order" onsubmit="return checkPoint(this)">
+            <p>ìƒí’ˆ: ${param.clname }</p><input type="hidden" value="${param.clcode }" name="goodsCode">
+            <p>ì´ë¦„: ${sessionScope.LoginMemName }</p><input type="hidden"name = "MemId" value="${sessionScope.LoginMemId }">
+            <p>ì£¼ë¬¸ ë‚´ì—­: ${odcode }</p><input type="hidden"name = "ordercode" value="${odcode }">
+            <p>ê¸ˆì•¡: ${param.cprice }</p><input type="hidden" id="goodsPrice"name = "goodsPrice" value="${param.cprice }">
+            <p style="display: contents;">ì‚¬ìš©ê°€ëŠ¥ í¬ì¸íŠ¸:${sessionScope.LoginMemPoint }</p>
+            <input type="text" id="point" name="mpoint" value="0"><br>
+            <p style="display: contents;">ì‚¬ì´ì¦ˆ:${param.csize }</p><input type="hidden" name="goodsSize"value="${param.csize }"><br>
+            <p style="display: contents;">ìˆ˜ëŸ‰(ìµœëŒ€10):</p><select name="goodsAmount"><c:forEach var="i" begin="1" end="10"><option value="${i }">${i }</option></c:forEach></select><br>
+            <p style="display: contents;">ì£¼ì†Œ: </p><input type="text"name="address" value="${sessionScope.LoginMemAddr }"><br>
+             <button type="submit"> ê²°ì œí•˜ê¸° </button>
         </form>
           
             
             
         </div>
     </div>
+    <script type="text/javascript">
+    function checkPoint(obj){
+    	let inputpoint = document.querySelector("#point");
+    	if(parseInt("${sessionScope.LoginMemPoint }", 10) < parseInt(inputpoint.value, 10)){
+    		alert("í¬ì¸íŠ¸ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤.");
+    		return false;
+    	}
+    	return true;
+    }
+    </script>
 </body>
 </html>

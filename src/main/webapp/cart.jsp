@@ -31,32 +31,38 @@
 		<div style="padding=top: 50px">
 			<table class="table table-hover">
 				<tr>
-					<th>상품</th>
+					<th>상품이름</th>
 					<th>가격</th>
-					<th>수량</th>
-					<th>소계</th>
+					<th>남은 수량</th>
+					<th>사이즈</th>
 					<th>비고</th>
 				</tr>
 				<c:choose>
-				<c:when test=""></c:when>
-				<c:otherwise>
+				<c:when test="${caddList == '[]' }">
 				<tr>
 					<td>추가한 상품이 없습니다.</td>
 				</tr>
+				</c:when>
+				<c:otherwise>
+				<c:forEach items="${caddList }" var="cadd">
+				<tr>
+					<td>${cadd.clcode }</td>
+					<td>${cadd.price }</td>
+					<td>${cadd.amount }</td>
+					<td>${cadd.csize }</td>
+					<td><a href="${pageContext.request.contextPath }/searchPage?search=${cadd.clcode}" class="badge badge-primary">검색</a>
+					<a href="${pagecontext.request.contextpath }/deletecadd?adcode=${cadd.adcode}" class="badge badge-danger">삭제</a></td>
+				</tr>
+				</c:forEach>
 				</c:otherwise>
 				</c:choose>
-				<tr>
-					<td>옷이름</td>
-					<td>가격</td>
-					<td>수량</td>
-					<td>소계</td>
-					<td><a href="" class="badge badge-danger">삭제</a></td>
-				</tr>
 				</table>
 				<a href="./NewFile1.jsp" class="btn-secondary"> &laquo;쇼핑계속하기</a>
 		</div>
 		<hr>
 	</div>
-	
+	<script type="text/javascript">
+	console.log("${caddList}");
+	</script>
 </body>
 </html>
